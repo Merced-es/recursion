@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class PalindromesTest {
+
   static final String[] knownPalindromes = {
       "radar",
       "abba",
@@ -19,18 +20,16 @@ class PalindromesTest {
 
   @Test
   void testRecursive() {
-    for (String kp: knownPalindromes) {
-      assertTrue(Palindromes.testRecursive(kp));
-    }
+    assertFalse(Palindromes.testRecursive("Radar"));
+    assertTrue(Palindromes.testRecursive("radar"));
+    assertFalse(Palindromes.testRecursive("sonar"));
+  }
 
-    for (String knp: knownNonPalindromes) {
-      assertFalse(Palindromes.testRecursive(knp));
-    }
-
+  @Test
+  void testDenormalized() {
+    assertTrue(Palindromes.testDenormalized("Radar"));
+    assertTrue(Palindromes.testDenormalized("A man, a plan, a canal - Panama!"));
+    assertFalse(Palindromes.testDenormalized("A man, a plan, a dam - Hoover!"));
   }
 
 }
-@Test
-  void testDenormalized(String kp) {
-    for (String kp: knownPalindromes) {
-      assertTrue(Palindromes.testRecursive(kp));
