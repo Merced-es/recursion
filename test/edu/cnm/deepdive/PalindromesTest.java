@@ -30,3 +30,7 @@ class PalindromesTest {
   }
 
 }
+@Test
+  void testDenormalized(String kp) {
+    for (String kp: knownPalindromes) {
+      assertTrue(Palindromes.testRecursive(kp));

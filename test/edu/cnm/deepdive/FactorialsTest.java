@@ -23,17 +23,17 @@ class FactorialsTest {
   };
 
   @Test
-  void computeRecursive() {
+  void BigInteger() {
 //    for (long[] testCase : testCases) {
     for (int i = 0; i < params.length; i++) {
 //      int n = (int) testCase[0];
 //      long expected = testCase[1];
       int n = params[i];
       long expected = expecteds[i];
-      long actual = Factorials.computeRecursive(n);
+      long actual = Factorials.BigInteger(n);
       assertEquals(expected, actual);
     }
-    assertThrows(IllegalArgumentException.class, () -> Factorials.computeRecursive(-1));
+    assertThrows(IllegalArgumentException.class, () -> Factorials.BigInteger(-1));
   }
 
 }
